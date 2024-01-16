@@ -3,7 +3,7 @@ public class ArrayOps {
         // System.out.println(findMissingInt(new int[] {4, 2, 1, 3}));
         // System.out.println(findMissingInt(new int[] {0}));
         // System.out.println(findMissingInt(new int[] {0, 1, 2, 5, 4, 6}));
-        // System.out.println(secondMaxValue(new int[] {0, 1, 2, 5, 4, 6}));
+        System.out.println(secondMaxValue(new int[] {2,8,3,7,8}));
         // System.out.println(secondMaxValue(new int[] {4, 2, 1, 3}));
         // System.out.println(secondMaxValue(new int[] {0, 1}));
         // System.out.println(containsTheSameElements(new int[] {1,2,3,4,5}, new int[] {1,2,3,4,5}));
@@ -50,7 +50,7 @@ public class ArrayOps {
         int max = 0;
         int max2 = 0;
         for (int i = 0; i < n; i++) {
-            if (array[i] > max) {
+            if (array[i] >= max) {
                 max2 = max;
                 max = array[i];
             }

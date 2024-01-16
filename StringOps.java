@@ -22,7 +22,9 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        
+        System.out.println(camelCase("Hello World"));
+        System.out.println(camelCase("HELLO   world"));
+        System.out.println(camelCase(" tWo    wordS"));
     }
 
     public static String capVowelsLowRest (String string) {
@@ -49,10 +51,11 @@ public class StringOps {
             if (newWord == true && string.charAt(i) != ' ') {
                 if (string.charAt(i) >= 97 && string.charAt(i) <= 122) {
                     string = string.substring(0, i) + (char) (string.charAt(i) - 32) + string.substring(i + 1);
-                    newWord = false;
                 }
+                newWord = false;
             } else if (string.charAt(i) >= 65 && string.charAt(i) <= 90) {
                     string = string.substring(0, i) + (char) (string.charAt(i) + 32) + string.substring(i + 1);
+                    firstWord = false;
             } else if (string.charAt(i) == ' ' && firstWord == false) {
                 string = string.substring(0, i) + string.substring(i + 1);
                 n--;
@@ -62,7 +65,6 @@ public class StringOps {
                 string = string.substring(0, i) + string.substring(i + 1);
                 n--;
                 i--;
-                firstWord = false;
             }
         }
         return string;
