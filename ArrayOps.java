@@ -1,18 +1,5 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        // System.out.println(findMissingInt(new int[] {4, 2, 1, 3}));
-        // System.out.println(findMissingInt(new int[] {0}));
-        // System.out.println(findMissingInt(new int[] {0, 1, 2, 5, 4, 6}));
-        System.out.println(secondMaxValue(new int[] {2,8,3,7,8}));
-        // System.out.println(secondMaxValue(new int[] {4, 2, 1, 3}));
-        // System.out.println(secondMaxValue(new int[] {0, 1}));
-        // System.out.println(containsTheSameElements(new int[] {1,2,3,4,5}, new int[] {1,2,3,4,5}));
-        // System.out.println(containsTheSameElements(new int[] {2,2,3,7,8,3,2}, new int[] {8,2,7,7,3}));
-        // System.out.println(containsTheSameElements(new int[] {1,2,3,-4,5}, new int[] {1,3,-4,5}));
-        // System.out.println(isSorted(new int[] {1, 2, -3}));
-        // System.out.println(isSorted(new int[] {3, 2, -1}));
-        // System.out.println(isSorted(new int[] {1, -2, 3, 4}));
-        // System.out.println(isSorted(new int[] {1, 2, 4, 3}));
     }
     
     // findMissingInt function that works with loops
@@ -45,12 +32,13 @@ public class ArrayOps {
         return sum;
     }
 
+    // finds the second largest value in an array by use of two max variables
     public static int secondMaxValue(int [] array) {
         int n = array.length;
         int max = 0;
         int max2 = 0;
         for (int i = 0; i < n; i++) {
-            if (array[i] >= max) {
+            if (array[i] >= max) { // greater than or equal to is essential
                 max2 = max;
                 max = array[i];
             }
@@ -97,6 +85,8 @@ public class ArrayOps {
         return true;
     }*/
 
+    // containsTheSameElements function that works with two pairs of nested loops,
+    // but it is much more readable and has the same time complexity as the previous version
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         int n = array1.length;
         int m = array2.length;
@@ -123,6 +113,8 @@ public class ArrayOps {
         return true;
     }
 
+    // checks to see if array is increasing or NOT increasing
+    // and returns false if a change in behavior is detected
     public static boolean isSorted(int [] array) {
         int n = array.length;
         boolean increasing = array[0] < array[1];

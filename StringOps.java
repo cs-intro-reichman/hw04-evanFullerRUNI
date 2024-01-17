@@ -22,11 +22,10 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        System.out.println(camelCase("Hello World"));
-        System.out.println(camelCase("HELLO   world"));
-        System.out.println(camelCase(" tWo    wordS"));
     }
 
+    // returns a string with all the vowels in upper case
+    // by using a for loop with if statements testing for type of letter
     public static String capVowelsLowRest (String string) {
         int n = string.length();
         for (int i = 0; i < n; i++) {
@@ -43,6 +42,7 @@ public class StringOps {
         return string;
     }
 
+    // converts string to camel case by changing ascii values and eliminating spaces
     public static String camelCase (String string) {
         int n = string.length();
         boolean newWord = false;
@@ -58,8 +58,8 @@ public class StringOps {
                     firstWord = false;
             } else if (string.charAt(i) == ' ' && firstWord == false) {
                 string = string.substring(0, i) + string.substring(i + 1);
-                n--;
-                i--;
+                n--; // necessary to prevent out of bounds
+                i--; //
                 newWord = true;
             } else if (string.charAt(i) == ' ') {
                 string = string.substring(0, i) + string.substring(i + 1);
@@ -70,6 +70,7 @@ public class StringOps {
         return string;
     }
 
+    // returns an array of all the indexes of the char in the string
     public static int[] allIndexOf (String string, char chr) {
         int n = string.length();
         int size = 0;
